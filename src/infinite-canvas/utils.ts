@@ -50,7 +50,7 @@ export const generateChunkPlanes = (cx: number, cy: number, cz: number): PlaneDa
   for (let i = 0; i < ITEMS_PER_CHUNK; i++) {
     const s = seed + i * 1000;
     const r = (n: number) => seededRandom(s + n);
-    const size = 6 + r(4) * 6; // Smaller planes for denser look
+    const size = (6 + r(4) * 6) * 1.35; // Increased by 35% for larger charts at max zoom
 
     planes.push({
       id: `${cx}-${cy}-${cz}-${i}`,
