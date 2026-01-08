@@ -517,11 +517,11 @@ export function InfiniteCanvasScene({
   showControls = false,
   cameraFov = 60,
   cameraNear = 1,
-  cameraFar = 500,
-  fogNear = 120,
-  fogFar = 320,
-  backgroundColor = "#ffffff",
-  fogColor = "#ffffff",
+  cameraFar = 600,
+  fogNear = 40,
+  fogFar = 500,
+  backgroundColor = "#050505",
+  fogColor = "#050505",
 }: InfiniteCanvasProps) {
   const isTouchDevice = useIsTouchDevice();
   const dpr = Math.min(window.devicePixelRatio || 1, isTouchDevice ? 1.25 : 1.5);

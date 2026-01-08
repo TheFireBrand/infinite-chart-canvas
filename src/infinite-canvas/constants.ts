@@ -1,15 +1,15 @@
 import { run } from "~/src/utils";
 
-export const CHUNK_SIZE = 110;
-export const RENDER_DISTANCE = 2;
+export const CHUNK_SIZE = 80;
+export const RENDER_DISTANCE = 4;
 export const CHUNK_FADE_MARGIN = 1;
-export const MAX_VELOCITY = 3.2;
-export const DEPTH_FADE_START = 140;
-export const DEPTH_FADE_END = 260;
+export const MAX_VELOCITY = 2.0;
+export const DEPTH_FADE_START = 60;
+export const DEPTH_FADE_END = 400;
 export const INVIS_THRESHOLD = 0.01;
-export const KEYBOARD_SPEED = 0.18;
-export const VELOCITY_LERP = 0.16;
-export const VELOCITY_DECAY = 0.9;
+export const KEYBOARD_SPEED = 0.12;
+export const VELOCITY_LERP = 0.08;
+export const VELOCITY_DECAY = 0.94;
 export const INITIAL_CAMERA_Z = 50;
 
 export type ChunkOffset = {

@@ -46,18 +46,18 @@ export const generateChunkPlanes = (cx: number, cy: number, cz: number): PlaneDa
   const planes: PlaneData[] = [];
   const seed = hashString(`${cx},${cy},${cz}`);
 
-  // ITEMS_PER_CHUNK = 5
-  for (let i = 0; i < 5; i++) {
+  const ITEMS_PER_CHUNK = 12;
+  for (let i = 0; i < ITEMS_PER_CHUNK; i++) {
     const s = seed + i * 1000;
     const r = (n: number) => seededRandom(s + n);
-    const size = 12 + r(4) * 8;
+    const size = 6 + r(4) * 6; // Smaller planes for denser look
 
     planes.push({
       id: `${cx}-${cy}-${cz}-${i}`,
       position: new THREE.Vector3(
         cx * CHUNK_SIZE + r(0) * CHUNK_SIZE,
         cy * CHUNK_SIZE + r(1) * CHUNK_SIZE,
-        cz * CHUNK_SIZE + r(2) * CHUNK_SIZE
+        cz * CHUNK_SIZE + (r(2) * 2 - 0.5) * CHUNK_SIZE // More Z-spread relative to chunk
       ),
       scale: new THREE.Vector3(size, size, 1),
       mediaIndex: Math.floor(r(5) * 1_000_000),
